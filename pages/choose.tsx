@@ -1,8 +1,9 @@
+import QuizInput from "@/components/QuizInput";
 import React from "react";
 import { useState } from "react";
 const Choose = () => {
 
-    const [info, setInfo] = useState({amount: 0, category: '', difficulty: '', type: ''})
+    const [info, setInfo] = useState({amount: 5, category: 'Science: Mathematics', difficulty: 'Medium', type: 'Multiple Choice'})
 
     const handleChange = (e: any) => {
         setInfo(prevInfo => {
@@ -20,12 +21,8 @@ const Choose = () => {
                     <h2 className="text-2xl">You can create the type of trivia you want here!</h2>
                 </div>
                 <form className="flex flex-col self-center w-1/3 m-auto mt-10">
-                    <input type="text" 
-                        placeholder="Amount of questions"
-                        onChange={handleChange}
-                        name="amount"
-                        value={info.amount}
-                    />
+                    <QuizInput text="Number of Questions:" value={info.amount} onChange={handleChange} name="amount" type="text"/>
+                    <QuizInput text="Select Category:" value={info.category} onChange={handleChange} name="category" type="select"/>
                 </form>
             </div>
         </div>

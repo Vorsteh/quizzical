@@ -1,8 +1,0 @@
-import React from "react"
-const MyPage = () => {
-    return (
-        <h1>Test</h1>
-    )
-}
-
-export default MyPage;
