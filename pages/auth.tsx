@@ -21,8 +21,8 @@ const Auth = () => {
     }, []);
 
     return (
-        <div className="relative flex justify-center w-full h-full lg:bg-[url('/images/authbg.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
-            <div className="self-center w-full lg:w-3/5 lg:h-2/3 lg:bg-[url('/images/authbg.jpg')] bg-no-repeat bg-center bg-fixed bg-cover rounded-xl shadow-lg">
+        <div className="relative flex justify-center w-full h-full lg:bg-[url('/images/stool.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
+            <div className="self-center w-full lg:w-3/5 lg:h-2/3 lg:bg-[url('/images/stool.jpg')] bg-no-repeat bg-center bg-fixed bg-cover rounded-xl shadow-lg">
                 <div className="flex w-full min-h-screen lg:min-h-0 lg:h-auto bg-slate-900 lg:bg-black lg:bg-opacity-50 rounded-xl">
                     <div className="w-full h-full p-8 lg:p-16">
                         <h2 className="text-4xl font-semibold text-white opacity-100">{variant === 'login' ? 'Sign in' : 'Register'}</h2>
@@ -81,7 +81,7 @@ const Auth = () => {
                             </div>
                             <hr />
                             <div className="w-3/4 m-auto mt-10 text-center text-gray-100">
-                                <p className="text-red-300">None of these options work at all it just looks good :3</p>
+                                <p className="text-red-300">None of these options work at all atm, its just for looks :3</p>
                                 <p className="pt-4">Anyhow, Welcome to Quizzical where you can answear questions and do trivias. Have fun!</p>
                             </div>
                         </div>

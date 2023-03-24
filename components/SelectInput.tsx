@@ -8,13 +8,13 @@ interface SelectProps {
 const SelectInput: React.FC<SelectProps> = ({text, value, options, name, onChange}) => {
 
     const optionList = options.map(option => {
-        return <option value={option} className='bg-gray-100'>{option}</option>
+        return <option value={option} key={option} className='bg-gray-100'>{option}</option>
     })
 
     return (
         <div className='relative pb-5'>
             <p className='font-bold'>{text}</p>
-            <select name={name} className='p-2 outline-none w-full rounded-sm bg-gray-300'>
+            <select name={name} className='w-full p-2 bg-gray-300 rounded-sm outline-none'>
                 {optionList}
             </select>
         </div>
