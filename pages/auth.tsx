@@ -21,8 +21,8 @@ const Auth = () => {
     }, []);
 
     return (
-        <div className="relative flex justify-center w-full h-full lg:bg-[url('/images/stool.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
-            <div className="self-center w-full lg:w-3/5 lg:h-2/3 lg:bg-[url('/images/stool.jpg')] bg-no-repeat bg-center bg-fixed bg-cover rounded-xl shadow-lg">
+        <div className="relative flex justify-center w-full h-full lg:bg-[url('/images/authbg.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
+            <div className="self-center w-full lg:w-3/5 lg:h-2/3 lg:bg-[url('/images/authbg.jpg')] bg-no-repeat bg-center bg-fixed bg-cover rounded-xl shadow-lg">
                 <div className="flex w-full min-h-screen lg:min-h-0 lg:h-auto bg-slate-900 lg:bg-black lg:bg-opacity-50 rounded-xl">
                     <div className="w-full h-full p-8 lg:p-16">
                         <h2 className="text-4xl font-semibold text-white opacity-100">{variant === 'login' ? 'Sign in' : 'Register'}</h2>

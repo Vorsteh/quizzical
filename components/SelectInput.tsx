@@ -6,11 +6,13 @@ interface SelectProps {
     onChange: any;
 }
 const SelectInput: React.FC<SelectProps> = ({text, value, options, name, onChange}) => {
-
-    const optionList = options.map(option => {
-        return <option value={0} key={option} className='bg-gray-100'>{option}</option>
-    })
-
+    const optionList = options;
+    
+    if(name === 'difficulty'){
+        const optionList = options.map(option => {
+            return <option value={option} key={option}>{option}</option>
+        })
+    }
     return (
         <div className='relative pb-5'>
             <p className='font-bold'>{text}</p>

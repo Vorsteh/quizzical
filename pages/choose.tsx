@@ -16,6 +16,10 @@ const Choose = () => {
         })
         console.log(info)
     }
+
+    const categoryList = categories.map(option => {
+        return <option value={option.id} key={option.id}>{option.name}</option>
+    })
     return (
         <div className="relative flex justify-center w-full h-full lg:bg-[url('/images/choose.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
             <div className="w-full h-full p-16 backdrop-blur-sm">
@@ -26,9 +30,9 @@ const Choose = () => {
                     </div>
                     <form className="flex flex-col self-center w-1/3 m-auto mt-10">
                         <QuizInput text="Number of Questions:" value={info.amount} onChange={handleChange} name="amount" type="text"/>
-                        <SelectInput name="category" options={categories} text='Select category' value={info.category} onChange={handleChange} />
+                        <SelectInput name="category" options={categoryList} text='Select category' value={info.category} onChange={handleChange} />
                         <SelectInput name="difficulty" options={['Any','Easy', 'Medium', 'Hard']} text='Select difficulty' value={info.difficulty} onChange={handleChange} />
-                        <SelectInput name="type" options={[{'Any type':'any'}, {'True / False': 'boolean'}, {'Multiple Choice':'multiple'}]} text='Select type' value={info.type} onChange={handleChange} />
+                        
                     
                     </form>
                 </div>
