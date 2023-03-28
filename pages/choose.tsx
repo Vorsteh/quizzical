@@ -5,7 +5,7 @@ import { useState } from "react";
 import { categories } from "@/components/categories";
 const Choose = () => {
 
-    const [info, setInfo] = useState({amount: 5, category: 'Select category', difficulty: 'Medium', type: 'Multiple Choice'})
+    const [info, setInfo] = useState({amount: 5, category: 'any', difficulty: 'any', type: 'any'})
 
     const handleChange = (e: any) => {
         setInfo(prevInfo => {
@@ -17,9 +17,8 @@ const Choose = () => {
         console.log(info)
     }
 
-    const categoryList = categories.map(option => {
-        return <option value={option.id} key={option.id}>{option.name}</option>
-    })
+
+    
     return (
         <div className="relative flex justify-center w-full h-full lg:bg-[url('/images/choose.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
             <div className="w-full h-full p-16 backdrop-blur-sm">
@@ -29,10 +28,21 @@ const Choose = () => {
                         <h2 className="text-2xl">You can create the type of trivia you want here!</h2>
                     </div>
                     <form className="flex flex-col self-center w-1/3 m-auto mt-10">
-                        <QuizInput text="Number of Questions:" value={info.amount} onChange={handleChange} name="amount" type="text"/>
-                        <SelectInput name="category" options={categoryList} text='Select category' value={info.category} onChange={handleChange} />
-                        <SelectInput name="difficulty" options={['Any','Easy', 'Medium', 'Hard']} text='Select difficulty' value={info.difficulty} onChange={handleChange} />
+                        <QuizInput text="Number of Questions:" value={info.amount} onChange={handleChange} name="amount" type="number" min={'1'} max={'50'}/>
+                        <SelectInput name="category" options={categories} text='Select category:' value={info.category} onChange={handleChange} />
                         
+                        <SelectInput name="difficulty" options={[
+                            {name: 'Any', id: ''}, 
+                            {name: 'Easy', id: 'easy'}, 
+                            {name: 'Medium', id: 'medium'}, 
+                            {name: 'Hard', id: 'hard'}
+                            ]} text='Select difficulty:' value={info.difficulty} onChange={handleChange} />
+
+                        <SelectInput name="type" options={[
+                            {name: 'Any Type', id: 'any'}, 
+                            {name: 'True / False',id: 'boolean'}, 
+                            {name: 'Multiple Choice', id: 'multiple'}
+                            ]} text='Select Type:' value={info.difficulty} onChange={handleChange} />
                     
                     </form>
                 </div>
