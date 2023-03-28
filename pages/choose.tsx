@@ -1,11 +1,15 @@
 import QuizInput from "@/components/QuizInput";
 import SelectInput from "@/components/SelectInput";
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { categories } from "@/components/categories";
+import Navbar from "@/components/Navbar";
+import Link from 'next/link'
+
 const Choose = () => {
 
-    const [info, setInfo] = useState({amount: 5, category: 'any', difficulty: 'any', type: 'any'})
+    const [info, setInfo] = useState({amount: 5, category: '19', difficulty: 'any', type: 'any'})
+    const [isDone, setIsDone] = useState(false)
 
     const handleChange = (e: any) => {
         setInfo(prevInfo => {
@@ -21,7 +25,8 @@ const Choose = () => {
     
     return (
         <div className="relative flex justify-center w-full h-full lg:bg-[url('/images/choose.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
-            <div className="w-full h-full lg:p-16 backdrop-blur-sm">
+            <Navbar />
+            <div className="w-full h-full mt-16 lg:mt-0 lg:p-16 backdrop-blur-sm">
                 <div className="w-full h-full m-auto bg-black bg-opacity-100 lg:h-auto lg:w-fit lg:bg-opacity-70 lg:rounded-3xl lg:p-14">
                     <div className="font-semibold text-center text-gray-800">
                         <h1 className="text-6xl">Quizzical</h1>
@@ -44,7 +49,11 @@ const Choose = () => {
                             {name: 'Multiple Choice', id: 'multiple'}
                             ]} text='Select Type:' value={info.difficulty} onChange={handleChange} />
                     
-                    <button className="self-center w-full py-3 text-xl font-bold bg-gray-200 rounded-lg lg:w-1/3">Start Quiz</button>
+                    
+                    <Link href={{
+                        pathname: '/quiz',
+                        query: info
+                    }} className="self-center w-full py-3 text-xl font-bold text-center bg-gray-200 rounded-lg lg:w-1/3">Start Quiz</Link>
                     </form>
                 </div>
             </div>

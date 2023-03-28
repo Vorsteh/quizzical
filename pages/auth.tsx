@@ -5,7 +5,7 @@ import { useCallback } from "react";
 
 import { GoMarkGithub } from 'react-icons/go';
 import { FcGoogle } from 'react-icons/fc';
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 const Auth = () => {
     const [email, setEmail] = useState('')
