@@ -13,7 +13,7 @@ const SelectInput: React.FC<SelectProps> = ({text, value, options, name, onChang
 
     return (
         <div className='relative pb-5'>
-            <p className='font-bold'>{text}</p>
+            <p className='font-bold text-white'>{text}</p>
             <select name={name} className='w-full p-2 bg-gray-300 rounded-sm outline-none' onChange={onChange}>
                 {categoryList}
             </select>

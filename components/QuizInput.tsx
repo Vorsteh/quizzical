@@ -15,7 +15,7 @@ const QuizInput: React.FC<QuizInputProps> = ({text, value, name, onChange, type,
 
     return (
         <div className='relative pb-5'>
-            <p className='font-bold'>{text}</p>
+            <p className='font-bold text-white'>{text}</p>
             <input 
                 type={type}
                 placeholder="Amount of questions"
