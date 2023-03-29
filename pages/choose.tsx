@@ -24,7 +24,7 @@ const Choose = () => {
 
     
     return (
-        <div className="relative flex justify-center w-full h-full lg:bg-[url('/images/choose.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
+        <div className="relative flex justify-center w-full min-h-full lg:bg-[url('/images/choose.jpg')] bg-no-repeat bg-center bg-fixed bg-cover ">
             <Navbar />
             <div className="w-full h-full mt-16 lg:mt-0 lg:p-16 backdrop-blur-sm">
                 <div className="w-full h-full m-auto bg-black bg-opacity-100 lg:h-auto lg:w-fit lg:bg-opacity-70 lg:rounded-3xl lg:p-14">
