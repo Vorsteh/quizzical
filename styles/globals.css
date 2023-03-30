@@ -16,3 +16,8 @@ html{
 }
 
 
+@layer components {
+  .contactInput {
+    @apply p-2 rounded-md font-semibold bg-transparent outline-none focus:border-b focus:rounded-none pt-3;
+  }
+}

@@ -21,9 +21,12 @@ const Navbar = () => {
     const router = useRouter()
   return (
     <div className='absolute z-50 w-full p-2 bg-gray-100 shadow-md '>
-        <MobileMenu links={['/home', '/about', '/contact', '/choose']} toggleFun={setShowMobileMenu} show={showMobileMenu}/>
-        <span className='md:hidden flex justify-end' onClick={() => setShowMobileMenu(prev => !prev)}><BsList size={32}/></span>
-        <div className='md:flex justify-around hidden'>
+        {showMobileMenu && <MobileMenu links={['/home', '/about', '/contact', '/choose']} toggleFun={setShowMobileMenu} show={showMobileMenu}/>}
+        <div className='flex justify-between p-2 items-center'>
+            <h2 className='md:hidden font-bold text-lg'>Quizzical</h2>
+            <span className='md:hidden' onClick={() => setShowMobileMenu(prev => !prev)}><BsList size={32}/></span>
+        </div>
+        <div className='md:flex justify-around hidden '>
             <NavLink link={'/home'} text={'Home'}/>
             <NavLink link={'/about'} text={'About Us'}/>
             <NavLink link={'/contact'} text={'Contact'}/>
@@ -57,7 +60,7 @@ const MobileMenu: React.FC<MmProps> = ({links, toggleFun, show}) => {
     })
 
     return (
-        <div className={`absolute w-full min-h-full bg-gray-100  ${show ? 'bottom-0' : 'bottom-full'}`}>
+        <div className={`absolute w-full min-h-full bg-gray-100`}>
             <div>
                 {linksList}
             </div>

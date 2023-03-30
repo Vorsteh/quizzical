@@ -20,8 +20,8 @@ const Quiz = () => {
     }, [])
 
 
-    const questions = questionsData.map(question => {
-        return <Question title={question['question']} wrong={question['incorrect_answers']} correct={question['correct_answer']}/>
+    const questions = questionsData.map((question, inc) => {
+        return <Question title={question['question']} key={inc} wrong={question['incorrect_answers']} correct={question['correct_answer']}/>
     })
 
   return (
