@@ -2,8 +2,8 @@ import React from 'react'
 
 interface questionData {
     title: string,
-    correct: string,
-    wrong: string[],
+    quesitons: Array<any>,
+    addAnswer: any
 }
 
 interface ansButtonData {
@@ -11,16 +11,22 @@ interface ansButtonData {
     isCorrect: boolean
 }
 
-const Question: React.FC<questionData> = ({title, correct, wrong}) => {
+const Question: React.FC<questionData> = ({title, quesitons}) => {
+
+    const questionList = quesitons.sort(() => (Math.random() > .5) ? 1 : -1).map((q, inc) => {
+        console.log(inc,' : ' ,q)
+
+        return <AnsButton key={inc} answear={q.question} isCorrect={q.isCorrect}/>
+    })
+
+
+
   return (
-    <div className='w-full h-72 p-10 rounded-lg mb-10 bg-slate-800'>
-        <h3 className=' text-gray-100 font-semibold text-xl'>{title}</h3>
+    <div className='w-full p-10 mb-10 rounded-lg h-72 bg-slate-800'>
+        <h3 className='text-xl font-semibold text-gray-100 '>{title}</h3>
         <hr />
-        <div className='h-full flex justify-evenly'>
-            <AnsButton answear={correct} isCorrect={true}/>
-            <AnsButton answear={wrong[1]} isCorrect={false}/>
-            <AnsButton answear={wrong[2]} isCorrect={false}/>
-            <AnsButton answear={wrong[0]} isCorrect={false}/>
+        <div className='flex h-full justify-evenly'>
+            {questionList}
         </div>
     </div>
   )
@@ -28,7 +34,7 @@ const Question: React.FC<questionData> = ({title, correct, wrong}) => {
 
 const AnsButton: React.FC<ansButtonData> = ({answear, isCorrect}) => {
     return (
-        <div className='bg-gray-200 p-2 w-1/5 inline-block rounded-xl text-center text-lg h-20 mt-auto mb-4 font-semibold hover:bg-slate-300'>
+        <div className='inline-block w-1/5 h-20 p-2 mt-auto mb-4 text-lg font-semibold text-center bg-gray-200 rounded-xl hover:bg-slate-300'>
             {answear}
         </div>
     )

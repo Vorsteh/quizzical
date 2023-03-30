@@ -21,8 +21,6 @@ const Choose = () => {
         console.log(info)
     }
 
-
-    
     return (
         <div className="relative flex justify-center w-full min-h-full lg:bg-[url('/images/choose.jpg')] bg-no-repeat bg-center bg-fixed bg-cover ">
             <Navbar />
