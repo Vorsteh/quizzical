@@ -28,7 +28,7 @@ const Question: React.FC<questionData> = ({title, correct, wrong}) => {
 
 const AnsButton: React.FC<ansButtonData> = ({answear, isCorrect}) => {
     return (
-        <div className='bg-gray-200 p-2 w-1/5 inline-block rounded-xl text-center text-lg h-20 mt-auto mb-4 font-semibold'>
+        <div className='bg-gray-200 p-2 w-1/5 inline-block rounded-xl text-center text-lg h-20 mt-auto mb-4 font-semibold hover:bg-slate-300'>
             {answear}
         </div>
     )
