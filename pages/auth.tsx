@@ -81,7 +81,7 @@ const Auth = () => {
                             </div>
                             <hr />
                             <div className="w-3/4 m-auto mt-10 text-center text-gray-100">
-                                <p className="text-red-300">None of these options work at all atm, its just for looks :3</p>
+                                <p className="text-red-300">None of these options work at all atm, its just for looks (*v*)</p>
                                 <p className="pt-4">Anyhow, Welcome to Quizzical where you can answear questions and do trivias. Have fun!</p>
                             </div>
                         </div>

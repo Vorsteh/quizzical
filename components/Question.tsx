@@ -8,7 +8,8 @@ interface questionData {
 
 interface ansButtonData {
     answear: string,
-    isCorrect: boolean
+    isCorrect: boolean,
+    selected: boolean
 }
 
 const Question: React.FC<questionData> = ({title, quesitons}) => {
@@ -16,7 +17,7 @@ const Question: React.FC<questionData> = ({title, quesitons}) => {
     const questionList = quesitons.sort(() => (Math.random() > .5) ? 1 : -1).map((q, inc) => {
         console.log(inc,' : ' ,q)
 
-        return <AnsButton key={inc} answear={q.question} isCorrect={q.isCorrect}/>
+        return <AnsButton key={inc} answear={q.question} isCorrect={q.isCorrect} selected={false}/>
     })
 
 
@@ -32,9 +33,9 @@ const Question: React.FC<questionData> = ({title, quesitons}) => {
   )
 }
 
-const AnsButton: React.FC<ansButtonData> = ({answear, isCorrect}) => {
+const AnsButton: React.FC<ansButtonData> = ({answear, isCorrect, selected}) => {
     return (
-        <div className='inline-block w-1/5 h-20 p-2 mt-auto mb-4 text-lg font-semibold text-center bg-gray-200 rounded-xl hover:bg-slate-300'>
+        <div className={`inline-block w-1/5 h-20 p-2 mt-auto mb-4 text-lg font-semibold text-center ${!selected ? ' bg-gray-200' :  'bg-green-200' } rounded-xl hover:bg-slate-300`}>
             {answear}
         </div>
     )
