@@ -2,7 +2,7 @@
 export default function Home() {
   return (
     <>
-      <h1 className="">Hello World!</h1>
+      <h1 className=""><a href="./auth">Start now</a></h1>
     </>
   )
 }
