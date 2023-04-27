@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 
 interface questionData {
     title: string,
@@ -20,7 +21,7 @@ const Question: React.FC<questionData> = ({title, quesitons}) => {
 
 
     const handleQuestionClick = (e: any, isCorrect: boolean) => {
-
+        
     }
 
     const questionList = qList.sort(() => (Math.random() > .5) ? 1 : -1).map((q, inc) => {
@@ -42,18 +43,21 @@ const Question: React.FC<questionData> = ({title, quesitons}) => {
 }
 
 const AnsButton: React.FC<ansButtonData> = ({answear, isCorrect, selected, handleClick}) => {
+
+    const [sel, setSel] = useState(false)
     const changeSelectedMode = () => {
         selected = !selected
         console.log('Selected')
         console.log(selected)
         handleClick(isCorrect)
+        setSel(prev => !prev)
     }
 
     console.log(selected)
 
     return (
         <div onClick={changeSelectedMode}
-        className={`inline-block w-1/5 h-20 p-2 mt-auto mb-4 text-lg font-semibold text-center ${!selected ? ' bg-gray-200' :  'bg-green-800' } rounded-xl hover:bg-slate-300`}>
+        className={`inline-block w-1/5 h-20 p-2 mt-auto mb-4 text-lg font-semibold text-center ${!sel ? ' bg-gray-200' :  'bg-green-800' } rounded-xl hover:bg-slate-300`}>
             {answear}
         </div>
     )
