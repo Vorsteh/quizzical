@@ -19,9 +19,17 @@ const Question: React.FC<questionData> = ({title, quesitons}) => {
     const qList = quesitons
     console.log('Question List: ' + quesitons)
 
+    const [selAnswears, setSelAnswears] = useState({})
+
 
     const handleQuestionClick = (e: any, isCorrect: boolean) => {
-        
+        setSelAnswears(prevInfo => {
+            return {
+                ...prevInfo,
+                [e.target.name]: e.target.value
+            }
+        })
+        console.log(selAnswears)
     }
 
     const questionList = qList.sort(() => (Math.random() > .5) ? 1 : -1).map((q, inc) => {
