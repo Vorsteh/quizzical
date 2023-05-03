@@ -53,21 +53,21 @@ const Question: React.FC<questionData> = ({title, quesitons}) => {
 const AnsButton: React.FC<ansButtonData> = ({answear, isCorrect, selected, handleClick}) => {
 
     const [sel, setSel] = useState(false)
-    const changeSelectedMode = () => {
+    const changeSelectedMode = (e:any ) => {
         selected = !selected
         console.log('Selected')
         console.log(selected)
-        handleClick(isCorrect)
+        handleClick(e, isCorrect)
         setSel(prev => !prev)
     }
 
     console.log(selected)
 
     return (
-        <div onClick={changeSelectedMode}
+        <button onClick={changeSelectedMode} name="a" value="a"
         className={`inline-block w-1/5 h-20 p-2 mt-auto mb-4 text-lg font-semibold text-center ${!sel ? ' bg-gray-200' :  'bg-green-800' } rounded-xl hover:bg-slate-300`}>
             {answear}
-        </div>
+        </button>
     )
 }
 
