@@ -22,12 +22,12 @@ const Navbar = () => {
   return (
     <div className='absolute z-50 w-full p-2 bg-gray-100 shadow-md '>
         {showMobileMenu && <MobileMenu links={['/home', '/about', '/contact', '/choose']} toggleFun={setShowMobileMenu} show={showMobileMenu}/>}
-        <div className='flex justify-between p-2 items-center'>
-            <h2 className='md:hidden font-bold text-lg'>Quizzical</h2>
+        <div className='flex items-center justify-between p-2'>
+            <h2 className='text-lg font-bold md:hidden'>Quizzical</h2>
             <span className='md:hidden' onClick={() => setShowMobileMenu(prev => !prev)}><BsList size={32}/></span>
         </div>
-        <div className='md:flex justify-around hidden '>
-            <NavLink link={'/home'} text={'Home'}/>
+        <div className='justify-around hidden md:flex '>
+            <NavLink link={'/'} text={'Home'}/>
             <NavLink link={'/about'} text={'About Us'}/>
             <NavLink link={'/contact'} text={'Contact'}/>
             <NavLink link={'/choose'} text={'Start a quiz'}/>
